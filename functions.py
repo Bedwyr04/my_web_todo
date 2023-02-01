@@ -1,19 +1,19 @@
 # FILEPATH = "../textfiles/Todos.txt"
 FILEPATH = "Todos.txt"
 
+
 def get_todos(action, list_local, filepath=FILEPATH):
     """
     Read a text file and return the list of already existent to do items
     or write new to do in the list
     """
-    match action:
-        case "r":
-            with open(filepath, 'r') as file_local:
-                todolist_local = file_local.readlines()
-            return todolist_local
-        case "w":
-            with open(filepath, 'w') as file_local:
-                file_local.writelines(list_local)
+    if action == "r":
+        with open(filepath, 'r') as file_local:
+            todolist_local = file_local.readlines()
+        return todolist_local
+    elif action == "w":
+        with open(filepath, 'w') as file_local:
+            file_local.writelines(list_local)
 
 
 def print_todo_onlist(new_todo):
